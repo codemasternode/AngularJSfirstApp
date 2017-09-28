@@ -17,7 +17,14 @@
             <div class="navbar navbar-inverse">
                 <a class="navbar-brand" href="#">SKLEP SPORTOWY</a>
             </div>
-            <div class="panel panel-default row" ng-controller="productListCtrl">
+
+            <div class="alert alert-danger" ng-show="data.error">
+                Błąd ({{data.error.status}}). Dane produktów nie zostały wczytane
+                <a href="app.html" class="alert-link">Kliknij by spróbować ponownie</a>
+            </div>
+
+
+            <div class="panel panel-default row" ng-controller="productListCtrl" ng-hide="data.error">
                 <div class="col-xs-3">
                     <a ng-click="selectCategory()"
                        class="btn btn-block btn-default btn-lg">Strona główna</a>
